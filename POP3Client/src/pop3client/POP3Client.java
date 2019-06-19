@@ -22,7 +22,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.io.*;
-import javax.net.ssl.*;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 
 public class POP3Client {
 
@@ -43,9 +44,8 @@ public void setDebug(boolean debug) {
 this.debug = debug;
 }
 public void Baixaconnect(String host, int port) throws IOException {
-SSLSocketFactory sslsocketfactory = SSLSocketFactory.getDefault();
-SSLSocket sslsocket = (SSLSocket) sslsocketfactory
-  .createSocket(host, port);
+SSLSocketFactory sslsocketfactory = (SSLSocketFactory) SSLSocketFactory.getDefault();
+SSLSocket sslsocket = (SSLSocket) sslsocketfactory.createSocket(host, port);
 InputStream reader = sslsocket.getInputStream();
 OutputStream writer = sslsocket.getOutputStream();
 if (debug)

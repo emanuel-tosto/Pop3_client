@@ -7,7 +7,6 @@ package pop3client;
 
 import java.io.IOException;
 import java.util.List;
-import  javax.net;
 /**
  *
  * @author 374172
