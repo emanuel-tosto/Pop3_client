@@ -20,7 +20,7 @@ public class main {
     POP3Client client = new POP3Client();
     client.setDebug(true);
     client.Altaconnect("pop.gmail.com");
-    client.login("emanueltosto@gmail.com", "basquete ball");
+    client.login("emanueltosto@gmail.com", "");
     System.out.println("Number of new emails: " + client.getNumberOfNewMessages());
     List<POP3Client.Message> messages = client.getMessages();
     for (int index = 0; index < messages.size(); index++) {
